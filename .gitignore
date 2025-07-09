@@ -1,0 +1,36 @@
+# Build directories and compiled files
+backend/build/
+**/build/
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+
+# Third party libraries build files (keep source code)
+backend/third_library/oatpp/cmake_install.cmake
+backend/third_library/oatpp/CTestTestfile.cmake
+backend/third_library/oatpp/Makefile
+backend/third_library/oatpp/CMakeFiles/
+# Large binary files from oatpp test and lib
+backend/third_library/oatpp/test/oatppAllTests
+backend/third_library/oatpp/src/liboatpp.a
+
+# Node modules
+frontend/node_modules/
+frontend/dist/
+
+# IDE files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp

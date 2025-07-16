@@ -20,11 +20,11 @@ fi
 echo "Starting servers..."
 cd backend/build
 ./file-management-server &
-sleep 2
+sleep 3
 
 cd ../../frontend
 npm run dev &
-sleep 3
+sleep 5
 
 echo "System started!"
 echo "Open your browser and go to: http://localhost:5173"

@@ -13,6 +13,10 @@ if [ ! -d "backend/third_library/oatpp" ] || [ ! -f "backend/third_library/oatpp
     git clone https://github.com/oatpp/oatpp.git backend/third_library/oatpp
     echo "Fixing oatpp for this project..."
     sed -i '315s/^set_target_source_groups/#set_target_source_groups/' backend/third_library/oatpp/src/CMakeLists.txt
+    # Hide the modification from git status
+    cd backend/third_library/oatpp
+    git update-index --skip-worktree src/CMakeLists.txt
+    cd ../../../
 else
     echo "oatpp library is ready"
 fi

@@ -7,14 +7,10 @@ backend/build/
 *.dylib
 *.exe
 
-# Third party libraries build files (keep source code)
-backend/third_library/oatpp/cmake_install.cmake
-backend/third_library/oatpp/CTestTestfile.cmake
-backend/third_library/oatpp/Makefile
-backend/third_library/oatpp/CMakeFiles/
-# Large binary files from oatpp test and lib
-backend/third_library/oatpp/test/oatppAllTests
-backend/third_library/oatpp/src/liboatpp.a
+# Third party libraries - ignore the entire directories
+# Users should run ./setup_third_party.sh to download them
+backend/third_library/oatpp/
+backend/third_library/json/
 
 # Node modules
 frontend/node_modules/

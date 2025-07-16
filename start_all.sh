@@ -1,25 +1,34 @@
 #!/bin/bash
 
-echo "Starting File Management System..."
-echo "This may take 5-15 minutes for first time setup"
+echo "Starting File Management System (First time setup)..."
 
-# Build backend
-cd /home/yifan_ju/Internship/EASE/Internship_Project/backend
+# Step 1: Setup third-party libraries
+echo "Step 1: Setting up libraries..."
+./setup_third_party.sh
+
+# Step 2: Build the backend
+echo "Step 2: Building backend..."
+cd backend
 ./build_backend.sh
+cd ..
 
-# Start backend
-cd build
+# Step 3: Install frontend dependencies
+echo "Step 3: Installing frontend..."
+cd frontend
+npm install
+cd ..
+
+# Step 4: Start the servers
+echo "Step 4: Starting servers..."
+cd backend/build
 ./file-management-server &
-
 sleep 3
 
-# Start frontend
 cd ../../frontend
-./start_frontend.sh &
-
+npm run dev &
 sleep 5
 
-echo "System started!"
-echo "Open your browser and visit: http://localhost:5173"
+echo "System is ready!"
+echo "Open your browser and go to: http://localhost:5173"
 
 wait
